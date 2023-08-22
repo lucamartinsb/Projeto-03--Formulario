@@ -1,0 +1,159 @@
+* {
+  /*Aplicando border-box em todos os elementos*/
+  box-sizing: border-box;
+  /*Zerando o espaçamento e preenchimento dos elementos*/
+  margin: 0;
+  padding: 0;
+}
+
+body,
+input,
+button,
+select,
+textarea {
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background: #d9d9d9;
+  margin: 0;
+}
+
+body::before {
+  content: ""; /*Obrigatório para fazer aparecer no html. Pode deixar vazio aqui.*/
+  background: #121214;
+  width: 100%;
+  height: 368px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
+#content {
+  width: 736px;
+  margin: auto;
+}
+
+header {
+  margin: 80px 0px 42px;
+  width: 319px;
+}
+
+header h1 {
+  color: white;
+  font-family: "Archivo", sans-serif;
+  font-size: 36px;
+  line-height: 42px;
+  margin-bottom: 24px;
+}
+
+header p {
+  color: #42d3ff;
+  font-size: 16px;
+  line-height: 26px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+  
+  border-radius: 8px;
+  background: #fafafc;
+  min-height: 300px;
+  padding: 64px;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+fieldset {
+  border: none;
+}
+
+fieldset legend {
+  color: #32264d;
+  font-family: "Archivo";
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 34px;
+
+  border-bottom: 1px solid #e6e6f0;
+  width: 100%;
+  padding-bottom: 16px;
+}
+
+.input-wrapper {
+  display: flex;
+  flex-direction: column;
+  /* margin: 24px 0; */
+
+  /* Caso queria fazer um gap, criar uma div que envolva também o legend do fieldset, 
+  pois o mesmo é ignorado pelo 'display: flex' (deve ser um bug) */
+}
+
+.input-wrapper label {
+  color: #4e4958;
+  font-size: 14px;
+  line-height: 24px;
+  margin-bottom: 10px;
+}
+
+.input-wrapper span {
+  color: #69666e; /* Cor original alterada por questões de acessibilidade */
+  font-size: 12px;
+  line-height: 20px;
+  margin-left: 12px;
+}
+
+.input-wrapper label span:hover {
+  /* Atribuindo mais acessibilidade */
+  color: #121214;
+  font-weight: bolder;
+}
+
+.input-wrapper input, textarea, select {
+  background: #fafafc;
+  border: 1px solid #e6e6f0;
+  border-radius: 8px;
+
+  width: 608px;
+  height: 56px;
+
+  padding: 15px 24px;
+
+  color: #69666e; /* Cor original alterada por questões de acessibilidade */
+  font-size: 16px;
+  line-height: 26px;
+}
+
+.input-wrapper textarea {
+  height: 168px;
+}
+
+.input-wrapper select {
+  /* Remove a seta para baixo */
+  /* Ver seção em www.caniuse.com */
+  appearance: none;
+  -webkit-appearance: none;
+  /* https://yoksel.github.io/url-encoder/ */
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none'%3E%3Cg clip-path='url(%23clip0_1_54)'%3E%3Cpath d='M8 10L12 14L16 10' stroke='%239C98A6' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/g%3E%3Cdefs%3E%3CclipPath id='clip0_1_54'%3E%3Crect width='24' height='24' fill='white'/%3E%3C/clipPath%3E%3C/defs%3E%3C/svg%3E");
+  /* Parar de repetir a imagem */
+  background-repeat: no-repeat;
+  /* Reposicionar a imagem */
+  background-position: right 24px top 50%;
+}
+
+.col-3 {
+  display: flex;
+  gap: 20px;
+}
+
+/* No primeiro nível da Div col-3, ou seja, as Div filhas mais externas (não incluindo outras Div mais internas), selecione o filho numero 1 */
+.col-3 > div:nth-child(1) {
+  width: 100%
+}
