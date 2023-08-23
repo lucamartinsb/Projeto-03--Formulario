@@ -121,10 +121,10 @@ fieldset legend {
   border: 1px solid #e6e6f0;
   border-radius: 8px;
 
-  width: 608px;
-  height: 56px;
+/* width: 608px;
+  height: 56px; */
 
-  padding: 15px 24px;
+  padding: 15px 24px; /* ALterar as dimensões dos campos de entrada */
 
   color: #69666e; /* Cor original alterada por questões de acessibilidade */
   font-size: 16px;
