@@ -22,7 +22,7 @@
                 esse formulário de inscrição.
             </p>
         </header>
-        <form action="">
+        <form action="" id="formulario">
 
             <fieldset> <!--Agrupamento de campos-->
                 <div class="wrapper"> <!-- Contorna o bug do 'display: flex' ignorar o <legend> -->
@@ -32,19 +32,19 @@
                     <div class="input-wrapper">
                         <label for="event-title">Título do evento <span>(mínimo 8 caracteres)</span>
                         </label><!--Elemento inline-->
-                        <input type="text" name="" id="event-title"><!--Elemento inline-block-->
+                        <input type="text" name="" id="event-title" required minlength="8"><!--Elemento inline-block-->
                     </div>
 
                     <div class="input-wrapper">
                         <label for="event-link">Link do evento <span>(comece com https://)</span>
                         </label><!--Elemento inline-->
-                        <input type="url" name="" id="event-link"><!--Elemento inline-block-->
+                        <input type="url" name="" id="event-link" required><!--Elemento inline-block-->
                     </div>
 
                     <div class="input-wrapper">
                         <label for="event-contact">Whatsapp para contato <span>(somente números)</span>
                         </label><!--Elemento inline-->
-                        <input type="number" name="" id="event-contact"><!--Elemento inline-block-->
+                        <input type="number" name="" id="event-contact" required><!--Elemento inline-block-->
                     </div>
 
                     <div class="input-wrapper">
@@ -74,7 +74,7 @@
                     <div class="input-wrapper">
                         <label for="adm-password">Senha de acesso para os participantes<span>(mínimo 8
                                 caracteres)</span></label>
-                        <input type="password" name="" id="adm-password">
+                        <input type="password" name="" id="adm-password" minlength="8">
                     </div>
                     <div class="checkbox-wrapper">
                         <input type="checkbox" name="" id="private-event-check">
@@ -89,7 +89,7 @@
                     <div class="col-3">
                         <div class="input-wrapper">
                             <label for="event-date">Data</label>
-                            <input type="date" name="" id="event-date">
+                            <input type="date" name="" id="event-date" required>
                         </div>
                         <div class="input-wrapper">
                             <label for="event-begin">Das</label>
@@ -103,9 +103,10 @@
                 </div>
             </fieldset>
             <div class="separador"></div>
+            <!--Botões dentro de formulários sem o atributo 'type' são automaticamente entendidos pelo navegador como botões de 'submit'.-->
         </form>
         <footer>
-            <input type="submit" value="Salvar evento">
+            <button type="submit" form="formulario">Salvar evento
         </footer>
     </div>
 </body>

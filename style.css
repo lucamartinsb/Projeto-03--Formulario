@@ -8,7 +8,6 @@
 
 body,
 input,
-button,
 select,
 textarea {
   font-family: "Poppins", sans-serif;
@@ -205,15 +204,22 @@ footer {
   background: #f0f0f4;
   height: 136px;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-/*   padding: 40px 65px; Flex tem o mesmo efeito*/
+  /* padding: 40px 65px; 
+  Quando o botão do footer tem suas dimensões 
+  finais definidas, padding tem o mesmo resultado que as definições de 
+  height juntamente com os alinhemntos do display flex definidos. 
+  */
   margin-bottom: 90px;
 }
 
-footer input {
+footer button {
   width: 608px;
-  /* height: 56px; padding tem o mesmo efeito*/
+  /* height: 56px; 
+  Padding tem o mesmo efeito, pois 15 (bottom) + 15 (top) + 26 (height) = 56px 
+  */
   padding: 15px 40px;
 
   border: none;
@@ -226,4 +232,13 @@ footer input {
   font-style: normal;
   font-weight: 600;
   line-height: 26px;
+}
+
+footer button:hover {
+  background: #05ba56;
+}
+
+/* Para a resposta ao usuário sobre campos obrigatórios: */
+input:invalid {
+  border: 2px solid tomato;
 }
